@@ -21,14 +21,14 @@ This is a simple ATM Machine simulation written in Go. It allows users to perfor
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/yourusername/atm-machine.git
-   cd atm-machine
+   git clone https://github.com/zdev2/atm-machine-sim.git
+   cd atm-machine-sim
    ```
 
 2. Build the project:
 
    ```sh
-   go build -o atm-machine main.go
+   go build -o atm-machine-sim main.go
    ```
 
 3. The repository includes a sample card located at `card-folder`:
@@ -47,7 +47,7 @@ This is a simple ATM Machine simulation written in Go. It allows users to perfor
 1. Run the program:
 
    ```sh
-   ./atm-machine
+   ./atm-machine-sim
    ```
 
 2. Follow the on-screen instructions to insert the card, login, and perform various banking operations.
