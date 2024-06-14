@@ -28,7 +28,7 @@ This is a simple ATM Machine simulation written in Go. It allows users to perfor
 2. Build the project:
 
    ```sh
-    go build -o atm-machine-sim.exe main.go
+   go build -o atm-machine-sim.exe main.go
    ```
 
 3. The repository includes a sample card located at `card-folder`:
