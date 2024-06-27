@@ -107,6 +107,11 @@ func withdraw(card Card) {
 	} else {
 		card.Balance -= amount
 		fmt.Printf("Anda telah menarik %v\n", formatBalance(amount))
+		
+		// Save the updated card details
+		if err := saveCardDetails("./card-slot/card.json", card); err != nil {
+			fmt.Println("Error saving card details:", err)
+		}
 	}
 
 	helpers.WaitForEnter()
@@ -120,6 +125,12 @@ func deposit(card Card) {
 
 	card.Balance += amount
 	fmt.Printf("Anda telah menyetor %v\n", formatBalance(amount))
+	
+	// Save the updated card details
+	if err := saveCardDetails("./card-slot/card.json", card); err != nil {
+		fmt.Println("Error saving card details:", err)
+	}
+
 	helpers.WaitForEnter()
 	menu(card)
 }
@@ -143,4 +154,23 @@ func formatBalance(balance int) string {
 	}
 
 	return "Rp" + string(formattedBalance)
+}
+
+func saveCardDetails(filePath string, card Card) error {
+	file, err := os.Create(filePath)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	data, err := json.MarshalIndent(card, "", "  ")
+	if err != nil {
+		return err
+	}
+
+	if _, err := file.Write(data); err != nil {
+		return err
+	}
+
+	return nil
 }
