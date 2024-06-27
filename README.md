@@ -21,17 +21,17 @@ This is a simple ATM Machine simulation written in Go. It allows users to perfor
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/yourusername/atm-machine.git
+   git clone https://github.com/zdev2/atm-machine.git
    cd atm-machine
    ```
 
 2. Build the project:
 
    ```sh
-   go build -o atm-machine main.go
+   go build -o atm-machine.exe main.go
    ```
 
-3. The repository includes a sample card located at `card-slot/card.json`:
+3. The repository includes a sample card located at `card-folder`:
 
    ```json
    {
@@ -55,33 +55,8 @@ This is a simple ATM Machine simulation written in Go. It allows users to perfor
 ## Project Structure
 
 - `main.go`: The main file containing the program logic.
-- `card-slot/card.json`: The simulated ATM card data.
+- `card.json`: The simulated ATM card data.
 - `helpers`: A package containing helper functions used in the program.
-
-### helpers Package
-
-You need to create a `helpers` package with the following functions:
-
-```go
-package helpers
-
-import (
-    "bufio"
-    "fmt"
-    "os"
-)
-
-// Clear clears the console screen.
-func Clear() {
-    fmt.Print("\033[H\033[2J")
-}
-
-// WaitForEnter waits for the user to press the Enter key.
-func WaitForEnter() {
-    fmt.Println("Press Enter to continue...")
-    bufio.NewReader(os.Stdin).ReadBytes('\n')
-}
-```
 
 ### Contributing
 
